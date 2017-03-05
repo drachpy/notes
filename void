@@ -1,0 +1,36 @@
+### VOID LINUX NOTES
+
+# ROOT BASH
+sudo su -
+vi /etc/passwd
+#edit root /bin/sh to /bin/bash
+exit
+
+# PAGER LESS
+vi ˜/.bashrc
+export PAGER=less
+
+# ADD USER PATH
+cd ˜
+mkdir bin
+echo 'export PATH=$HOME/bin:$PATH' >> .bashrc
+
+# VBOX CLIENT
+sudo xbps-install -Sy virtualbox-ose-guest
+sudo ln -s /etc/sv/vboxservice /var/service/
+sudo depmod
+sudo init 6
+sudo VBoxClient --clipboard
+sudo init 6
+#you should have the vbox client working
+
+# DMENU
+sudo xbps-install -Sy dmenu
+mkdir ˜/bin
+cd ˜/bin
+echo '#!/bin/sh'> dmenu_mine
+echo '/usr/bin/dmenu_run -l 24 -fn 10x20'>> dmenu_mine
+chmod a+x dmenu_mine
+˜/bin/dmenu_mine
+# then add shortcut key to your desktop
+
