@@ -1,5 +1,10 @@
 ### VOID LINUX NOTES
 
+# SYSTEM UPDGRADE
+sudo xbps-install -Syuv
+sudo xbps-install -Syuv
+#do it twice
+
 # ROOT BASH
 sudo su -
 vi /etc/passwd
